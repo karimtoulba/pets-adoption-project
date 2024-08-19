@@ -1,0 +1,145 @@
+html,
+body {
+  background-color: #ffffff;
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.heading {
+  background-color: #001d37;
+  padding: 0px 25px;
+  overflow: hidden;
+}
+
+.heading-hero {
+  padding-top: 75px;
+  padding-bottom: 100px;
+  max-width: 1180px;
+  position: relative;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 52px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.6em;
+}
+
+.heading-text {
+  color: #fff;
+  max-width: 425px;
+}
+
+.heading-text {
+  z-index: 1;
+  position: relative;
+}
+
+.heading-buttons {
+  margin: 25px 0px 50px 0px;
+}
+
+.heading-btn {
+  display: inline-block;
+  background: #475aff;
+  border: solid 1px #475aff;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.heading-btn-white {
+  background: transparent;
+  border: solid 1px #f1f1f1;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.heading-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 12px;
+  z-index: 1;
+  position: relative;
+}
+
+.heading-grid-feature {
+  border: solid 1px #f1f1f141;
+  padding: 35px 25px;
+  margin: 10px;
+  color: #fff;
+  border-radius: 15px;
+}
+
+.heading-grid-feature p {
+  color: #f1f1f19a !important;
+}
+
+.circle1 {
+  background: #d660ff;
+  height: 500px;
+  width: 500px;
+  border-radius: 100%;
+  filter: blur(150px);
+  opacity: 0.65;
+  position: absolute;
+  top: -25px;
+  right: 0px;
+}
+
+.circle2 {
+  background: #416eeb;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.85;
+  position: absolute;
+  top: -25px;
+  z-index: 0;
+}
+
+.page-content {
+  background: #fff;
+  padding: 50px 50px;
+}
+
+.page-content-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.pets-filter {
+  color: #7e7e7e;
+}
+
+.pets-filter button {
+  background-color: #fff;
+  font-family: "Source Sans 3", sans-serif;
+  border: none;
+  font-size: 15px;
+}
+
+.footer-section {
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  padding: 20px 0px;
+  font-size: 14px;
+  background-color: #001d37;
+  position: relative;
+}
