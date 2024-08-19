@@ -29,6 +29,7 @@ h1 {
 
 h2 {
   font-size: 36px;
+  line-height: 16px;
 }
 
 p {
@@ -115,7 +116,7 @@ p {
 
 .page-content {
   background: #fff;
-  padding: 50px 50px;
+  padding: 50px 0px 65px 0px;
 }
 
 .page-content-inner {
@@ -142,4 +143,22 @@ p {
   font-size: 14px;
   background-color: #001d37;
   position: relative;
+}
+
+.pets-cards {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.single-pet-card {
+  border: solid 1px #c4c4c4;
+  padding: 0px 25px 35px 25px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+.single-pet-card span {
+  color: #8f8f8f;
+  font-size: 14px;
 }
