@@ -115,13 +115,20 @@ p {
 }
 
 .page-content {
-  background: #fff;
-  padding: 50px 0px 65px 0px;
+  background-color: #001d37;
+  padding: 6px 12px;
 }
 
 .page-content-inner {
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.actual-page-content {
   max-width: 1180px;
   margin: 0 auto;
+  padding: 50px 0px 65px 0px;
 }
 
 .pets-filter {
@@ -153,12 +160,12 @@ p {
 
 .single-pet-card {
   border: solid 1px #c4c4c4;
-  padding: 0px 25px 35px 25px;
+  padding: 12px 24px;
   margin: 15px;
   border-radius: 10px;
 }
 
-.single-pet-card span {
+.pet-text span {
   color: #8f8f8f;
   font-size: 14px;
 }
