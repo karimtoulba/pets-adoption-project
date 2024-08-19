@@ -136,7 +136,7 @@ p {
 }
 
 .pets-filter button {
-  background-color: #fff;
+  background-color: transparent;
   font-family: "Source Sans 3", sans-serif;
   border: none;
   font-size: 15px;
