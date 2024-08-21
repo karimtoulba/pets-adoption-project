@@ -63,6 +63,13 @@ p {
   font-weight: 400;
   color: #ffffff;
   text-decoration: none;
+  transition: background 0.3s ease-out, border 0.3s ease-out;
+}
+
+.heading-btn:hover {
+  background: #691457;
+  border: solid 1px #691457;
+  color: #fff;
 }
 
 .heading-btn-white {
@@ -70,6 +77,12 @@ p {
   border: solid 1px #f1f1f1;
   margin-left: 10px;
   color: #fff;
+}
+
+.heading-btn-white:hover {
+  background: #ffffff;
+  border: #ffffff;
+  color: #000000;
 }
 
 .heading-grid {
