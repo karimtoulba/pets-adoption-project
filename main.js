@@ -1,49 +1,61 @@
+// Weather temperature
 const template = document.querySelector("#single-pet-template");
 const wrapper = document.createDocumentFragment();
 
-// Fetching and printing the weather data from Weather.com
-async function start() {
-  const weatherLink = await fetch(
-    "https://api.weather.gov/gridpoints/MFL/110,50/forecast"
-  );
-
+async function weatherData() {
+  const weatherLink = await fetch("https://api.weather.gov/gridpoints/MFL/110,50/forecast");
   const weatherJson = await weatherLink.json();
-  const theWeather = weatherJson.properties.periods[0].temperature;
-  document.querySelector("#weather-output").textContent = theWeather;
+  const temperature = weatherJson.properties.periods[0].temperature;
+  document.querySelector("#weather-output").textContent = temperature;
 }
 
-start();
+weatherData();
 
-// Fetching Dynmic Pets from data file
+// Dynamic Pets Cards
 async function petsCards() {
-  const petsLink = await fetch("pets.json");
-  const petsJson = await petsLink.json();
-  petsJson.forEach(pet => {
-    const clone = template.content.cloneNode(true);
+    const petsLink = await fetch("pets.json");
+    const petsJson = await petsLink.json();
+    petsJson.forEach(pet => {
+        const clone = template.content.cloneNode(true);
 
-    clone.querySelector("h3").textContent = pet.name;
-    clone.querySelector("p").textContent = pet.description;
-    clone.querySelector("span").textContent = sinceYears(pet.birthYear);
-    clone.querySelector(".pet-image").innerHTML = noImage(pet.photo, pet.description);
+        clone.querySelector("h3").textContent = pet.name;
+        clone.querySelector("p").textContent = pet.description;
+        clone.querySelector("span").textContent = sinceYear(pet.birthYear);
+        clone.querySelector(".pet-image").innerHTML = theImage(pet.photo, pet.description);
 
-    wrapper.appendChild(clone);
-  });
-  document.querySelector(".pets-cards").appendChild(wrapper);
+        wrapper.appendChild(clone);
+    });
+    document.querySelector(".pets-cards").appendChild(wrapper);
 }
 
 petsCards();
 
-// Calculating the pet age
-function sinceYears(petYear) {
+
+// Calculating Pet Years
+function sinceYear (petYear) {
     const currentYear = new Date().getFullYear();
     const petAge = currentYear - petYear;
     if (petAge == 1) {return `A year ago`}
     if (petAge == 0) {return `Less than a year ago`}
-    return `${petAge} years ago`
+    return `${petAge} years ago`;
 }
 
-// Failed Image - Fallen Back Default Image
-function noImage(petImage, petAlt) {
-    if (petImage == null) {return `<img src="/images/default.png" alt="No Image" />`}
+// Bringing the Image & Alt Tags (& Fallen Back image)
+function theImage(petImage, petAlt) {
+    if (petImage == null) {return `<img src="images/default.png" alt="No image" />`}
     return `<img src="${petImage}" alt="${petAlt}" />`
+}
+
+// Filtering the Pets
+const allButtons = document.querySelectorAll(".pets-filter button");
+
+allButtons.forEach(element => {
+    element.addEventListener("click", handleClick);
+});
+
+function handleClick(event) {
+    allButtons.forEach(element => {
+        element.classList.remove("active");
+    });
+    event.target.classList.add("active");
 }

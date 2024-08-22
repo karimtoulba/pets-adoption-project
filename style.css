@@ -166,6 +166,17 @@ p {
   font-family: "Source Sans 3", sans-serif;
   border: none;
   font-size: 15px;
+  cursor: pointer;
+}
+
+.pets-filter button.active,
+.pets-filter button.active:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.pets-filter button:hover {
+  color: #8d8d8d;
 }
 
 .footer-section {
