@@ -24,7 +24,7 @@ async function petsCards() {
     clone.querySelector("h3").textContent = pet.name;
     clone.querySelector("p").textContent = pet.description;
     clone.querySelector("span").textContent = sinceYears(pet.birthYear);
-    clone.querySelector(".pet-image").innerHTML = `<img src="${pet.photo}" alt="${pet.description}" />`;
+    clone.querySelector(".pet-image").innerHTML = noImage(pet.photo, pet.description);
 
     wrapper.appendChild(clone);
   });
@@ -40,4 +40,10 @@ function sinceYears(petYear) {
     if (petAge == 1) {return `A year ago`}
     if (petAge == 0) {return `Less than a year ago`}
     return `${petAge} years ago`
+}
+
+// Failed Image - Fallen Back Default Image
+function noImage(petImage, petAlt) {
+    if (petImage == null) {return `<img src="/images/default.png" alt="No Image" />`}
+    return `<img src="${petImage}" alt="${petAlt}" />`
 }
