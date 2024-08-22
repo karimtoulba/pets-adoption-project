@@ -16,20 +16,28 @@ start();
 
 // Fetching Dynmic Pets from data file
 async function petsCards() {
-    const petsLink = await fetch("pets.json");
-    const petsJson = await petsLink.json();
-    petsJson.forEach(pet => {
-        const clone = template.content.cloneNode(true);
+  const petsLink = await fetch("pets.json");
+  const petsJson = await petsLink.json();
+  petsJson.forEach(pet => {
+    const clone = template.content.cloneNode(true);
 
-        clone.querySelector("h3").textContent = pet.name;
-        clone.querySelector("p").textContent = pet.description;
-        clone.querySelector("span").textContent = pet.birthYear;
-        clone.querySelector(".pet-image").innerHTML = `<img src="${pet.photo}" />`;
+    clone.querySelector("h3").textContent = pet.name;
+    clone.querySelector("p").textContent = pet.description;
+    clone.querySelector("span").textContent = sinceYears(pet.birthYear);
+    clone.querySelector(".pet-image").innerHTML = `<img src="${pet.photo}" alt="${pet.description}" />`;
 
-        wrapper.appendChild(clone);
-    });
-    document.querySelector(".pets-cards").appendChild(wrapper);
+    wrapper.appendChild(clone);
+  });
+  document.querySelector(".pets-cards").appendChild(wrapper);
 }
 
 petsCards();
 
+// Calculating the pet age
+function sinceYears(petYear) {
+    const currentYear = new Date().getFullYear();
+    const petAge = currentYear - petYear;
+    if (petAge == 1) {return `A year ago`}
+    if (petAge == 0) {return `Less than a year ago`}
+    return `${petAge} years ago`
+}
