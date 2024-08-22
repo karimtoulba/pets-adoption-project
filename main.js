@@ -10,3 +10,14 @@ async function start() {
 }
 
 start();
+
+// Fetching Dynmic Pets from data file
+async function petData() {
+    const petsLink = await fetch("pets.json");
+    const petsJson = await petsLink.json();
+    petsJson.forEach(pet => {
+        console.log(pet.species);
+    });
+}
+
+petData();
