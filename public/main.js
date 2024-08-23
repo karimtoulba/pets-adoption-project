@@ -13,7 +13,7 @@ weatherData();
 
 // Dynamic Pets Cards
 async function petsCards() {
-  const petsLink = await fetch("https://pets-adoption-netlify.netlify.app/.netlify/functions/pets");
+  const petsLink = await fetch("/.netlify/functions/pets");
   const petsJson = await petsLink.json();
   petsJson.forEach((pet) => {
     const clone = template.content.cloneNode(true);
