@@ -47,9 +47,9 @@ function sinceYear(petYear) {
 // Bringing the Image & Alt Tags (& Fallen Back image)
 function theImage(petImage, petAlt) {
   if (petImage == null) {
-    return `<img src="public/images/default.png" alt="No image" />`;
+    return `<img src="images/default.png" alt="No image" />`;
   }
-  return `<img src="/public/${petImage}" alt="${petAlt}" />`;
+  return `<img src="${petImage}" alt="${petAlt}" />`;
 }
 
 // Filtering the Pets
