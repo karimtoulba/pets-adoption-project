@@ -1,0 +1,15 @@
+{
+  "name": "pets-landing-page",
+  "version": "1.0.0",
+  "description": "Creating a from-scratch pets adoption website [no CMS] with a backend management system to add/edit/delete pet listings and some other cool features.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^6.8.0"
+  }
+}
