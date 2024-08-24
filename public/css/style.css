@@ -230,3 +230,34 @@ p {
   object-fit: cover;
   display: block;
 }
+
+#login-form {
+  max-width: 350px;
+  padding: 50px;
+  background: #f1f1f1;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+.login-field {
+  display: block;
+  padding: 10px;
+  width: -webkit-fill-available;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  border: solid 1px #ababab;
+}
+
+#login-form p {
+  padding-bottom: 10px;
+}
+
+.login-button {
+  width: -webkit-fill-available;
+  display: block;
+  padding: 10px;
+  background: #38629a;
+  color: #fff;
+  border: 0px;
+  border-radius: 5px;
+}
