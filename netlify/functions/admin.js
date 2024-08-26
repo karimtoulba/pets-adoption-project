@@ -12,7 +12,7 @@ const handler = async (event) => {
 
   const pets = await client.db().collection("pets-adoption").find().toArray();
   client.close();
-
+  
   // Verify Cookie Value
   if (cookieIncoming.petadoption == "ACDSKJhd7f2310PW") {
     const petsHTML = generateHTML(pets);
