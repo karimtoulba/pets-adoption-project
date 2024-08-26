@@ -272,3 +272,37 @@ p {
   margin-right: 10px;
   cursor: pointer;
 }
+
+.admin-button svg {
+  vertical-align: middle;
+  padding-right: 5px;
+}
+
+.loading-h {
+  width: 60%;
+  height: 30px;
+  background: grey;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.loading-p {
+  width: 85%;
+  height: 45px;
+  background: grey;
+  border-radius: 5px;
+}
+
+@keyframes still-loading {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.loading-p,
+.loading-h {
+  animation: 0.2s still-loading ease-in-out alternate infinite;
+}
