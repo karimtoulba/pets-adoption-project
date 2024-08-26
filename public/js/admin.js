@@ -12,3 +12,10 @@ async function start() {
 }
 
 start();
+
+// Add New Pet Button
+document.querySelector("#add-new").addEventListener("click", handleClick);
+
+function handleClick() {
+  window.location = "/admin/add-new.htm";
+}
