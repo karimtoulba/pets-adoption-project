@@ -3,10 +3,11 @@ const cookie = require("cookie");
 // Secure environment
 const handler = async (event) => {
   const body = JSON.parse(event.body);
+  console.log(body);
 
   const cookieIncoming = cookie.parse(event.headers.cookie || "");
 
-  if (cookieIncoming.petadoption == "ACDSKJhd7f2310PW") {
+  if (cookieIncoming.petadoption === "ACDSKJhd7f2310PW") {
     return {
       statusCode: 200, // False
       headers: { "Content-Type": "application/json" },
@@ -14,6 +15,7 @@ const handler = async (event) => {
     };
   }
 
+  // False
   return {
     statusCode: 200, // False
     headers: { "Content-Type": "application/json" },

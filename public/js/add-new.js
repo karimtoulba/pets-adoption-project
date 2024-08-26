@@ -1,12 +1,12 @@
 document.querySelector("#add-new-pet-form").addEventListener("submit", handleNewPet);
 
-async function handleNewPet(e) {
-  e.preventDefault();
+async function handleNewPet(event) {
+  event.preventDefault();
 
   const pet = {
     name: document.querySelector("#name").value,
-    birthYear: document.querySelector("#birthYear").value,
     species: document.querySelector("#species").value,
+    birthYear: document.querySelector("#birthYear").value,
     description: document.querySelector("#description").value,
   };
 
@@ -18,8 +18,8 @@ async function handleNewPet(e) {
 
   const newJson = await newLink.json();
 
-  // Redirect to admin page if Logged in
+  // Redirect to Admin Dashboard if submitted successfully
   if (newJson.success) {
-    window.location = "/admin";
+    window.location = "/admin"
   }
 }

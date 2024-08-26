@@ -14,7 +14,7 @@ const handler = async (event) => {
   client.close();
 
   // Verify Cookie Value
-  if (cookieIncoming.petadoption == "ACDSKJhd7f2310PW") {
+  if (cookieIncoming.petadoption === "ACDSKJhd7f2310PW") {
     const petsHTML = generateHTML(pets);
 
     return {
