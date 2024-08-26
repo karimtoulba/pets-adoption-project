@@ -1,7 +1,7 @@
-document.querySelector("#add-new-pet-form").addEventListener("submit", handleNewPet);
+document.querySelector("#add-new-pet-form").addEventListener("submit", handleSubmit);
 
-async function handleNewPet(event) {
-  event.preventDefault();
+async function handleSubmit(event) {
+  event.preventDefault(); // Prevent default form redirection
 
   const pet = {
     name: document.querySelector("#name").value,
@@ -18,8 +18,8 @@ async function handleNewPet(event) {
 
   const newJson = await newLink.json();
 
-  // Redirect to Admin Dashboard if submitted successfully
+  // Redirect to Admin Dashboard if successfully submitted
   if (newJson.success) {
-    window.location = "/admin"
+    window.location = "/admin";
   }
 }

@@ -1,5 +1,6 @@
 const cookie = require("cookie");
 const dbClient = require("../../modules/db-client.js");
+const escape = require("escape-html");
 
 // Secure environment
 const handler = async (event) => {
@@ -33,10 +34,15 @@ const handler = async (event) => {
     ourHTML = `<div class="pets-cards">`;
     ourHTML += pets
       .map((pet) => {
+        // Fallen Back Image
+        if (!pet.photo) {
+          pet.photo = "images/default.png";
+        }
+        // Pets Server Side
         return `<div class="single-pet-card">
                 <div class="pet-text">
-                  <h3>${pet.name}</h3>
-                  <p>${pet.description}</p>
+                  <h3>${escape(pet.name)}</h3>
+                  <p>${escape(pet.description)}</p>
                   <div class="admin-buttons">
                   <button class="admin-button">Edit</button> <button class=" admin-button">Delete</button>
                   </div>
