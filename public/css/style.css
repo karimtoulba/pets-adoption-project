@@ -248,6 +248,26 @@ p {
   border: solid 1px #ababab;
 }
 
+.login-select {
+  display: block;
+  padding: 10px;
+  width: -webkit-fill-available;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  border: solid 1px #ababab;
+}
+
+textarea.login-field {
+  display: block;
+  padding: 10px;
+  width: -webkit-fill-available;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  border: solid 1px #ababab;
+  font-family: inherit;
+  resize: none;
+}
+
 #login-form p {
   padding-bottom: 10px;
 }
@@ -260,6 +280,18 @@ p {
   color: #fff;
   border: 0px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button {
+  width: -webkit-fill-available;
+  display: block;
+  padding: 10px;
+  background: #38629a;
+  color: #fff;
+  border: 0px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .admin-buttons {
@@ -305,4 +337,18 @@ p {
 .loading-p,
 .loading-h {
   animation: 0.2s still-loading ease-in-out alternate infinite;
+}
+
+.small-link {
+  font-size: 14px;
+  color: grey;
+}
+
+.add-new-form {
+  width: 75%;
+  padding-top: 25px;
+}
+
+.admin-header {
+  padding-bottom: 25px;
 }

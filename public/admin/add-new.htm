@@ -11,20 +11,37 @@
     <div class="page-content" id="view-pets">
       <div class="page-content-inner">
         <div class="actual-page-content">
-          <h2>Add New Pet</h2>
-          <p>Here, you can add a new pet to your website easily.</p>
-          <button class="admin-button" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" /></svg
-            >Add New Pet</button
-          ><button id="logout" class="admin-button">Logout</button>
+          <div class="admin-header">
+            <div class="small-link"><a href="/admin/">Back to Admin Dashboard</a></div>
+            <h2>Add New Pet</h2>
+            <p>Here, you can add a new pet to your website easily.</p>
+            <button class="admin-button" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" /></svg
+              >Add New Pet</button
+            ><button id="logout" class="admin-button">Logout</button>
+          </div>
+          <hr />
+          <!-- START - Add New Pet Form -->
+          <form id="add-new-pet-form" class="add-new-form">
+            <input class="login-field" type="text" id="name" placeholder="Pet Name" autofocus />
+            <input class="login-field" type="text" id="birthYear" placeholder="Pet Birth Year" />
+            <select class="login-select" id="species">
+              <option>Select pet Species</option>
+              <option value="cat">Cat</option>
+              <option value="dog">Dog</option>
+            </select>
+            <textarea class="login-field" id="description" placeholder="Pet Description.."></textarea>
+            <button class="submit-button">Add New Pet</button>
+          </form>
+          <!-- END - Add New Pet Form -->
         </div>
       </div>
     </div>
 
     <!-- Page Footer -->
     <div class="footer-section">&copy; Pets Adoption Center.</div>
-    <script src="../js/admin.js"></script>
     <script src="../js/logout.js"></script>
+    <script src="../js/add-new.js"></script>
   </body>
 </html>
