@@ -5,7 +5,7 @@ async function start() {
 
   // Login or Logout per the cookie set
   if (cookieJson.success) {
-    // load the admin dashboard UI
+    document.querySelector("#render-pets").innerHTML = cookieJson.pets;
   } else {
     window.location = "/login";
   }

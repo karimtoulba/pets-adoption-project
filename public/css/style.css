@@ -261,3 +261,14 @@ p {
   border: 0px;
   border-radius: 5px;
 }
+
+.admin-buttons {
+  display: block;
+  padding-top: 10px;
+}
+
+.admin-button {
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
