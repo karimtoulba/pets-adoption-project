@@ -1,5 +1,5 @@
 const cookie = require("cookie");
-const { MongoClient } = require("mongodb");
+const dbClient = require("../../modules/db-client.js");
 
 // Secure environment
 const handler = async (event) => {
@@ -7,8 +7,7 @@ const handler = async (event) => {
   const cookieIncoming = cookie.parse(event.headers.cookie || "");
 
   // Connect to Database
-  const client = new MongoClient(process.env.DBCONNECT);
-  await client.connect();
+  const client = await dbClient();
 
   const pets = await client.db().collection("pets-adoption").find().toArray();
   client.close();

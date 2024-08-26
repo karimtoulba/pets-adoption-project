@@ -1,13 +1,13 @@
-const cookie = require("cookie");
+const isAdmin = require("../../modules/isAdmin.js"); // Check if is admin
+const dbClient = require("../../modules/db-client.js"); // Establish Database Connection
+const cookie = require("cookie"); // Load the Cookie package
 
 // Secure environment
 const handler = async (event) => {
   const body = JSON.parse(event.body);
   console.log(body);
 
-  const cookieIncoming = cookie.parse(event.headers.cookie || "");
-
-  if (cookieIncoming.petadoption === "ACDSKJhd7f2310PW") {
+  if (isAdmin(event)) {
     return {
       statusCode: 200, // False
       headers: { "Content-Type": "application/json" },

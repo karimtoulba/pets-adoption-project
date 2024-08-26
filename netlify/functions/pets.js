@@ -1,9 +1,8 @@
-const { MongoClient } = require("mongodb");
+const dbClient = require("../../modules/db-client.js");
 
 // Secure environment
 const handler = async () => {
-  const client = new MongoClient(process.env.DBCONNECT);
-  await client.connect();
+  const client = await dbClient();
 
   const pets = await client.db().collection("pets-adoption").find().toArray();
   client.close();
